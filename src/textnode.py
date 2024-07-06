@@ -19,7 +19,7 @@ class TextNode:
              and self.url == other.url)
   
   def text_node_to_html_node(self):
-    match self.text:
+    match self.text_type:
       case TextNode.text_type_text:
         return LeafNode(None, self.text)
       case TextNode.text_type_bold:
@@ -32,6 +32,9 @@ class TextNode:
         return LeafNode("a", self.text, {"href": self.url})
       case TextNode.text_type_image:
         return LeafNode("img", "", {"src": self.url, "alt": self.text})
+      
+      case _:
+        raise Exception("invalid text type")
         
 
   def __repr__(self):
