@@ -1,7 +1,13 @@
 from htmlnode import HtmlNode, LeafNode, ParentNode
 
 class TextNode:
-  text_type_code = 
+  text_type_bold = "bold"
+  text_type_code = "code"
+  text_type_image = "image"
+  text_type_italic = "italic"
+  text_type_link = "link"
+  text_type_text = "text"
+
   def __init__(self, text, text_type, url=None):
     self.text = text
     self.text_type = text_type
@@ -14,22 +20,20 @@ class TextNode:
   
   def text_node_to_html_node(self):
     match self.text:
-      case "text":
+      case TextNode.text_type_text:
         return LeafNode(None, self.text)
-      case "bold":
+      case TextNode.text_type_bold:
         return LeafNode("b", self.text)
-      case "italic":
+      case TextNode.text_type_italic:
         return LeafNode("i", self.text)
-      case "code":
+      case TextNode.text_type_code:
         return LeafNode("code", self.text)
-      case "link":
+      case TextNode.text_type_link:
         return LeafNode("a", self.text, {"href": self.url})
-      case "image":
+      case TextNode.text_type_image:
         return LeafNode("img", "", {"src": self.url, "alt": self.text})
-      
-  def split_nodes_delimiter(old_nodes, delimiter, text_type):
+        
 
-      
-  
   def __repr__(self):
-    return f"TextNode({self.text}, {self.text_type}, {self.url})"
+    return f"TextNode('{self.text}', '{self.text_type}', '{self.url}')"
+
