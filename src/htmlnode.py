@@ -20,13 +20,15 @@ class HtmlNode:
 
 class LeafNode(HtmlNode):
   def __init__(self, tag, value, props=None):
+    if value == None:
+      raise ValueError("Value not set")
+
     super().__init__(tag, value, None, props)
 
   def to_html(self):
-    if self.value:
-      props = self.props_to_html() or ""
-      return f"<{self.tag}{props}>{self.value}</{self.tag}>" if self.tag else self.value
-    raise ValueError("Value not set")
+    props = self.props_to_html() or ""
+    return f"<{self.tag}{props}>{self.value}</{self.tag}>" if self.tag else self.value
+    
 
   def __repr__(self):
     return f"LeafNode({self.tag}, {self.value}, {self.props})"
