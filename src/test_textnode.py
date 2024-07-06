@@ -34,6 +34,5 @@ class TestTextNode(unittest.TestCase):
     node2 = TextNode("This is a text node", "italic")
     self.assertEqual(str(node1), str(node2))
 
-
 if __name__ == "__main__":
     unittest.main()
