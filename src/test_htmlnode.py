@@ -42,8 +42,9 @@ class TestHtmlNode(unittest.TestCase):
     self.assertEqual(leaf2.to_html(), "<a href=\"https://www.google.com\">Click me!</a>")
 
   def test_no_value_leaf_child(self):
-    leaf = LeafNode("p", None)
-    self.assertRaises(ValueError)
+    def function():
+      LeafNode("p", None, None)
+    self.assertRaises(ValueError, function), 
   
   def test_leaf_node_repr(self):
     leaf = LeafNode(
