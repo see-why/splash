@@ -1,5 +1,3 @@
-from src.htmlnode import HtmlNode, LeafNode, ParentNode
-
 class TextNode:
   text_type_bold = "bold"
   text_type_code = "code"
