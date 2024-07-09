@@ -1,5 +1,5 @@
-from src.markdown_to_blocks import (markdown_to_blocks)
-from src.block_to_block_type import (
+from markdown_to_blocks import (markdown_to_blocks)
+from block_to_block_type import (
   block_to_block_type,
   block_type_paragraph,
   block_type_heading,
@@ -8,9 +8,9 @@ from src.block_to_block_type import (
   block_type_unordered_list,
   block_type_ordered_list
 )
-from src.text_to_text_nodes import (text_to_text_nodes)
-from src.text_node_to_html_node import (text_node_to_html_node)
-from src.htmlnode import (ParentNode)
+from text_to_text_nodes import (text_to_text_nodes)
+from text_node_to_html_node import (text_node_to_html_node)
+from htmlnode import (ParentNode)
 
 
 def paragraph_block_inline_markdown_to_html_nodes(block):

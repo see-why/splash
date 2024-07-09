@@ -1,10 +1,10 @@
-from src.inline_markdown import (
+from inline_markdown import (
   split_nodes_delimiter,
   split_nodes_link,
   split_nodes_image,
 )
 
-from src.textnode import TextNode
+from textnode import TextNode
 
 def text_to_text_nodes(text):
   node = TextNode(text, TextNode.text_type_text, TextNode)
