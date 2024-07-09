@@ -1,11 +1,13 @@
 import shutil
 import os
-from textnode import TextNode
+from generate_page import (generate_pages_recursive)
 
 def main():
-  text_node = TextNode("This is a text node", "bold", "https://www.boot.dev")
-  copy_content("static", "public")
-  print(text_node)
+  # text_node = TextNode("This is a text node", "bold", "https://www.boot.dev")
+  # copy_content("static", "public")
+  # generate_page("content/index.md", "template.html", "public/index.html")
+  generate_pages_recursive("content", "template.html", "public")
+  # print(text_node)
 
 def copy_content(source_path, destination_path):
   source_path_exists = os.path.exists(source_path)
