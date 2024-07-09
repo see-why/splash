@@ -1,5 +1,5 @@
 import re
-from src.textnode import TextNode
+from textnode import TextNode
 
   # work on nested examples later  
 def split_nodes_delimiter(old_nodes, delimiter, text_type):
@@ -11,7 +11,7 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
     split_nodes = []
     sub_texts = node.text.split(delimiter)
 
-    if len(sub_texts) % 2 == 0:
+    if len(sub_texts) % 2 == 0 and not all('' == s or s.isspace() for s in sub_texts):
       raise Exception("invalid markdown, add missing closing formatter")
 
     for idx in range(len(sub_texts)):
@@ -31,6 +31,13 @@ def extract_markdown_images(text):
 
 def extract_markdown_links(text):
   return re.findall(r'\[(.*?)\]\((.*?)\)', text)
+
+def extract_tite(markdown):
+  lines = markdown.split('\n')
+  for line in lines:
+    if line.startswith("# "):
+      return line[2:]
+  raise Exception("All pages need a header")
 
 def split_nodes_link(old_nodes):
   new_nodes = []
