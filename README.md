@@ -26,11 +26,13 @@ Confirm this by running:
 
 ### Running program
 
+- To start run `(zsh or bash) main.sh` (if you have trouble executing, you might what to change the file permission so it's treated as an executable file using `chmod`)
+- Voila!!!, you should see a public folder with the corresponding HTML.
+- You can `cd public` and start the http server `python3 -m http.server 8889` then open http://localhost:8889/ to see the default files genereted using the files shipped with the application.
+- run `(zsh or bash) test.sh` for tests.
 - Add your markdown files (could be directories or just files) to the Content folder.
 - For images and css, please add them to the static folder.
-- run `(zsh or bash) main.sh` (if you have trouble executing, you might what to change the file permission so it's treated as an executable file using `chmod`)
-- Voila!!!, you should see a public folder with the corresponding HTML.
-- run `(zsh or bash) test.sh` for tests.
+- run the start command and enjoy!!!.
 
 ## Author
 👤 **Cyril Iyadi**
@@ -47,3 +49,6 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## 📝 License
+- This project is [MIT](./LICENSE) licensed.
