@@ -1,6 +1,6 @@
 import shutil
 import os
-from generate_page import (generate_pages_recursive)
+from src.generate_page import generate_pages_recursive
 
 def main():
   # text_node = TextNode("This is a text node", "bold", "https://www.boot.dev")
