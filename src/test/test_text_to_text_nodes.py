@@ -1,6 +1,6 @@
 import unittest
 
-from src.text_to_text_nodes import (text_to_text_nodes)
+from src.text_to_text_nodes import text_to_text_nodes
 from src.textnode import TextNode
 
 
